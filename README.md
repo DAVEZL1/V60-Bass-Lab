@@ -5,6 +5,7 @@
 [![Platform](https://img.shields.io/badge/Platform-Android_9.0+_--_API_28+-3DDC84?logo=android&logoColor=white)](#requirements)
 [![Hardware](https://img.shields.io/badge/Hardware-ESS_SABRE_ES9219_Quad_DAC-00E5FF)](#hardware-features)
 [![Status](https://img.shields.io/badge/Status-Public_Beta_(v1.17)-orange.svg)](#overview)
+[![Download APK](https://img.shields.io/badge/Download_APK-v1.17_Beta-brightgreen?logo=android&logoColor=white)](https://github.com/DAVEZL1/V60-Bass-Lab/releases/tag/v1.17-beta)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
 > [!NOTE]
