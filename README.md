@@ -20,6 +20,24 @@ It combines real-time digital signal processing (DSP), subharmonic synthesis, an
 
 ---
 
+## 📸 Screenshots
+
+<p align="center">
+  <img src="docs/screenshots/01_dashboard.png" width="31%" alt="Analog Cockpit & Spectrum Analyzer" />
+  &nbsp;
+  <img src="docs/screenshots/02_hardware_signatures.png" width="31%" alt="Classic Hi-Fi Hardware Signatures" />
+  &nbsp;
+  <img src="docs/screenshots/03_smart_ai_and_profiles.png" width="31%" alt="Studio Acoustic Profiles & Smart DJ" />
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/04_ai_acoustic_engineer.png" width="31%" alt="Neural Acoustic Engineer" />
+  &nbsp;
+  <img src="docs/screenshots/05_parametric_console.png" width="31%" alt="8-Channel Parametric & Quad DAC" />
+</p>
+
+---
+
 ## ✨ Key Features
 
 ### 🎛️ 1. Hardware Quad DAC Control

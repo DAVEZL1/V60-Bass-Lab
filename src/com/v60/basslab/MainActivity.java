@@ -1321,8 +1321,8 @@ public class MainActivity extends Activity {
             boolean isVisible = layoutAdvancedContent.getVisibility() == View.VISIBLE;
             layoutAdvancedContent.setVisibility(isVisible ? View.GONE : View.VISIBLE);
             btnToggleAdvanced.setText(isVisible
-                ? "Ajustes Avanzados, EQ Paramétrico 8-Ch & Quad DAC ▼"
-                : "Ajustes Avanzados, EQ Paramétrico 8-Ch & Quad DAC ▲");
+                ? "Advanced Settings, 8-Ch Parametric EQ & Quad DAC ▼"
+                : "Advanced Settings, 8-Ch Parametric EQ & Quad DAC ▲");
         });
 
         if (btnResetParametricEq != null) {
@@ -1605,10 +1605,10 @@ public class MainActivity extends Activity {
             QuadDacManager.DacStatus status = QuadDacManager.getStatus();
             mainHandler.post(() -> {
                 String impStr = (status.leftImpedance > 0 || status.rightImpedance > 0) ?
-                    status.leftImpedance + " Ω / " + status.rightImpedance + " Ω" : "Sin audífonos";
+                    status.leftImpedance + " Ω / " + status.rightImpedance + " Ω" : "No headphones";
                 String modeStr = status.getModeDescription();
 
-                tvAdvImpedance.setText("Impedancia: " + impStr + " • " + modeStr);
+                tvAdvImpedance.setText("Impedance: " + impStr + " • " + modeStr);
                 tvHeaderDacBadge.setText("⚡ ESS Sabre • " + impStr + " (" + modeStr.split(" ")[0] + ")");
 
                 if (status.currentFilter >= 0 && status.currentFilter < QuadDacManager.ESS_FILTERS.length) {

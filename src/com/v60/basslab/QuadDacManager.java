@@ -20,9 +20,9 @@ public class QuadDacManager {
                 case 2:
                     return "High-Impedance (2.0 Vrms)";
                 case 3:
-                    return "Auxiliar (1.0 Vrms)";
+                    return "Auxiliary (1.0 Vrms)";
                 default:
-                    return "Desconectado / Standby";
+                    return "Disconnected / Standby";
             }
         }
     }
