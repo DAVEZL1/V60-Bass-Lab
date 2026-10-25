@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Studio Obsidian & Liquid Glass Foundation Tokens -->
+    <color name="ios_bg">#07080C</color>
+    <color name="ios_card">#11131A</color>
+    <color name="ios_card_elevated">#191C26</color>
+    <color name="ios_stroke">#28FFFFFF</color>
+    <color name="ios_pill">#171A24</color>
+
+    <!-- Studio Surface & Well Tokens -->
+    <color name="studio_bg_deep">#050609</color>
+    <color name="studio_surface_primary">#12151E</color>
+    <color name="studio_surface_secondary">#0D0F17</color>
+    <color name="studio_well_bg">#080A0F</color>
+    <color name="studio_well_stroke">#1FFFFFFF</color>
+    <color name="studio_glass_border">#26FFFFFF</color>
+    <color name="studio_glass_highlight">#38FFFFFF</color>
+    <color name="studio_divider">#1AFFFFFF</color>
+
+    <!-- Semantic Pro-Audio Accent Tokens -->
+    <color name="ios_blue">#2E9BFF</color>
+    <color name="ios_cyan">#36D6FF</color>
+    <color name="ios_orange">#FF9F0A</color>
+    <color name="ios_green">#32D760</color>
+    <color name="ios_purple">#BF5AF2</color>
+    <color name="ios_red">#FF453A</color>
+    <color name="ios_yellow">#FFD60A</color>
+
+    <!-- High-Contrast WCAG AA/AAA Typography Tokens -->
+    <color name="ios_text_primary">#F5F7FA</color>
+    <color name="ios_text_secondary">#9BA1B0</color>
+    <color name="ios_text_tertiary">#636978</color>
+    <color name="studio_terminal_green">#32D760</color>
+
+    <!-- Philips FW-M576 & Sony LBT-XB66 Hardware Signature Tokens -->
+    <color name="philips_max_idle">#1E1014</color>
+    <color name="philips_max_active">#E6192E</color>
+    <color name="philips_max_glow">#FF4D4D</color>
+    <color name="philips_max_stroke">#FF3B30</color>
+    <color name="philips_amber">#FFB326</color>
+    <color name="philips_amber_surface">#26FFB326</color>
+    <color name="philips_game_blue">#2E9BFF</color>
+    <color name="philips_game_purple">#BF5AF2</color>
+    <color name="sony_gold_active">#FFB800</color>
+    <color name="sony_gold_surface">#24FFB800</color>
+
+    <!-- Master Studio Accent Aliases -->
+    <color name="cyber_bg">#07080C</color>
+    <color name="cyber_card">#11131A</color>
+    <color name="cyber_card_stroke">#26FFFFFF</color>
+    <color name="cyber_red">#FF334B</color>
+    <color name="cyber_orange">#FF8A1F</color>
+    <color name="cyber_amber">#FFB800</color>
+    <color name="cyber_green">#00E676</color>
+
+    <!-- Backwards Compatibility Aliases -->
+    <color name="bg_main">@color/cyber_bg</color>
+    <color name="bg_card">@color/cyber_card</color>
+    <color name="accent_cyan">@color/ios_cyan</color>
+    <color name="accent_orange">@color/cyber_orange</color>
+    <color name="accent_green">@color/cyber_green</color>
+    <color name="text_primary">@color/ios_text_primary</color>
+    <color name="text_secondary">@color/ios_text_secondary</color>
+    <color name="text_muted">@color/ios_text_tertiary</color>
+    <color name="divider_color">@color/studio_divider</color>
+    <color name="badge_bg">#161922</color>
+</resources>

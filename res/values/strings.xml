@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">V60 Bass Lab</string>
+    <string name="app_subtitle">LG V60 • ESS SABRE ES9219 QUAD DAC</string>
+    <string name="dac_section_title">QUAD DAC HARDWARE CONTROL</string>
+    <string name="dac_status_label">DAC Status:</string>
+    <string name="dac_impedance_label">Detected Impedance:</string>
+    <string name="dac_mode_label">Output Mode:</string>
+    <string name="dac_filter_label">ESS Reconstruction Filter:</string>
+    <string name="force_high_impedance">Force 2.0 Vrms Mode</string>
+    <string name="force_high_impedance_desc">Unlocks maximum output voltage and dynamic range for clean, distortion-free bass</string>
+    
+    <string name="dsp_section_title">BASS DSP ENGINE</string>
+    <string name="master_dsp_switch">Enable DSP Processor</string>
+    <string name="sub_bass_title">Deep Sub-Bass (20 - 60 Hz)</string>
+    <string name="punch_title">Punch &amp; Impact (60 - 150 Hz)</string>
+    <string name="warmth_title">Body &amp; Warmth (150 - 300 Hz)</string>
+    <string name="bass_boost_title">Dynamic Bass Boost</string>
+    <string name="limiter_title">Multiband Compressor &amp; Limiter</string>
+    <string name="limiter_desc">Active anti-clipping protection and overmodulation control</string>
+    
+    <string name="presets_section_title">AUDIO PRESETS</string>
+    <string name="preset_sub_cannon">Sub-Bass Cannon</string>
+    <string name="preset_punch_edm">Club / EDM Punch</string>
+    <string name="preset_warm_acoustic">Warm Acoustic</string>
+    <string name="preset_audiophile_flat">Audiophile Direct</string>
+    
+    <string name="btn_refresh">Refresh DAC Status</string>
+</resources>

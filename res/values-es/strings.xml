@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">V60 Bass Lab</string>
+    <string name="app_subtitle">LG V60 • ESS SABRE ES9219 QUAD DAC</string>
+    <string name="dac_section_title">CONTROL DE HARDWARE QUAD DAC</string>
+    <string name="dac_status_label">Estado del DAC:</string>
+    <string name="dac_impedance_label">Impedancia detectada:</string>
+    <string name="dac_mode_label">Modo de salida:</string>
+    <string name="dac_filter_label">Filtro de Reconstrucción ESS:</string>
+    <string name="force_high_impedance">Forzar Modo 2.0 Vrms</string>
+    <string name="force_high_impedance_desc">Desbloquea el voltaje máximo y rango dinámico para graves sin distorsión</string>
+    
+    <string name="dsp_section_title">MOTOR DSP DE BAJOS</string>
+    <string name="master_dsp_switch">Activar Procesador DSP</string>
+    <string name="sub_bass_title">Sub-Bass Profundo (20 - 60 Hz)</string>
+    <string name="punch_title">Pegada &amp; Impacto (60 - 150 Hz)</string>
+    <string name="warmth_title">Cuerpo &amp; Calidez (150 - 300 Hz)</string>
+    <string name="bass_boost_title">Refuerzo Dinámico de Bajos</string>
+    <string name="limiter_title">Compresor Multibanda &amp; Limitador</string>
+    <string name="limiter_desc">Protección activa anti-clipping y control de sobremodulación</string>
+    
+    <string name="presets_section_title">PRESETS DE AUDIO</string>
+    <string name="preset_sub_cannon">Sub-Bass Cañón</string>
+    <string name="preset_punch_edm">Pegada Club / EDM</string>
+    <string name="preset_warm_acoustic">Acústico Cálido</string>
+    <string name="preset_audiophile_flat">Audiófilo Directo</string>
+    
+    <string name="btn_refresh">Actualizar Estado DAC</string>
+</resources>

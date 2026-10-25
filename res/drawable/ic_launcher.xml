@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Base dark background (Material 3 Dark Surface) -->
+    <path
+        android:fillColor="#0B0F19"
+        android:pathData="M0,0h108v108h-108z" />
+        
+    <!-- Outer ambient soundwave ripples -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#141E33"
+        android:strokeWidth="1.5"
+        android:pathData="M54,54m-46,0a46,46 0 1,1 92,0a46,46 0 1,1 -92,0" />
+        
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#1B2640"
+        android:strokeWidth="2.0"
+        android:pathData="M54,54m-38,0a38,38 0 1,1 76,0a38,38 0 1,1 -76,0" />
+        
+    <!-- Subwoofer outer basket & surround ring -->
+    <path
+        android:fillColor="#111827"
+        android:strokeColor="#1F293D"
+        android:strokeWidth="1.5"
+        android:pathData="M54,54m-30,0a30,30 0 1,1 60,0a30,30 0 1,1 -60,0" />
+        
+    <!-- Inner acoustic cone -->
+    <path
+        android:fillColor="#162035"
+        android:pathData="M54,54m-23,0a23,23 0 1,1 46,0a23,23 0 1,1 -46,0" />
+
+    <!-- Acoustic sub-bass shockwaves (Left & Right pulsing arcs) -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#00E5FF"
+        android:strokeAlpha="0.45"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M27,42 A30,30 0 0,0 27,66" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#00E5FF"
+        android:strokeAlpha="0.75"
+        android:strokeWidth="3.0"
+        android:strokeLineCap="round"
+        android:pathData="M33,46 A22,22 0 0,0 33,62" />
+
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFB300"
+        android:strokeAlpha="0.45"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M81,42 A30,30 0 0,1 81,66" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFB300"
+        android:strokeAlpha="0.75"
+        android:strokeWidth="3.0"
+        android:strokeLineCap="round"
+        android:pathData="M75,46 A22,22 0 0,1 75,62" />
+
+    <!-- Speaker central dome / dustcap circle (Deep metallic obsidian) -->
+    <path
+        android:fillColor="#0F172A"
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="2.0"
+        android:pathData="M54,54m-18,0a18,18 0 1,1 36,0a18,18 0 1,1 -36,0" />
+
+    <!-- Subtle inner bevel ring -->
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M54,54m-14,0a14,14 0 1,1 28,0a14,14 0 1,1 -28,0" />
+
+    <!-- Stylized "V" emblem (V60 Hi-Res Quad DAC Wing) in Cyan & Amber -->
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M44,45 L50,45 L54,56 L51.5,56 L44,45 Z" />
+
+    <path
+        android:fillColor="#FFB300"
+        android:pathData="M64,45 L58,45 L54,56 L56.5,56 L64,45 Z" />
+
+    <!-- Lower V apex point & core glow -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M52.5,55 L55.5,55 L54,59.5 Z" />
+
+    <!-- Dynamic Audio EQ Spectrum Bars underneath V (Sub, Punch, Body, Air) -->
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M42,64 L45,64 A1.5,1.5 0 0,1 46.5,65.5 L46.5,70 A1.5,1.5 0 0,1 45,71.5 L42,71.5 A1.5,1.5 0 0,1 40.5,70 L40.5,65.5 A1.5,1.5 0 0,1 42,64 Z" />
+
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M48,61 L51,61 A1.5,1.5 0 0,1 52.5,62.5 L52.5,73 A1.5,1.5 0 0,1 51,74.5 L48,74.5 A1.5,1.5 0 0,1 46.5,73 L46.5,62.5 A1.5,1.5 0 0,1 48,61 Z" />
+
+    <path
+        android:fillColor="#FFB300"
+        android:pathData="M54,63 L57,63 A1.5,1.5 0 0,1 58.5,64.5 L58.5,73 A1.5,1.5 0 0,1 57,74.5 L54,74.5 A1.5,1.5 0 0,1 52.5,73 L52.5,64.5 A1.5,1.5 0 0,1 54,63 Z" />
+
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M60,65 L63,65 A1.5,1.5 0 0,1 64.5,66.5 L64.5,70 A1.5,1.5 0 0,1 63,71.5 L60,71.5 A1.5,1.5 0 0,1 58.5,70 L58.5,66.5 A1.5,1.5 0 0,1 60,65 Z" />
+
+    <!-- Top Quad DAC Diamond Accent -->
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M54,36 L57,40 L54,44 L51,40 Z" />
+</vector>

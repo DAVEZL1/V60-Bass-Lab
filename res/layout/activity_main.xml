@@ -1,0 +1,2039 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ios_bg"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="14dp"
+        android:paddingTop="14dp"
+        android:paddingEnd="14dp"
+        android:paddingBottom="24dp">
+
+        <!-- ========================================================= -->
+        <!-- 1. STUDIO MASTER CONSOLE HEADER                           -->
+        <!-- ========================================================= -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/card_dark_glass"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingTop="14dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="14dp">
+
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/btn_gradient_capture"
+                android:contentDescription="Icono de consola maestra V60 Bass Lab"
+                android:padding="10dp"
+                android:src="@drawable/ic_audio_visualizer_bars" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.03"
+                        android:text="V60 "
+                        android:textColor="@color/ios_text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.03"
+                        android:text="BASS LAB"
+                        android:textColor="@color/philips_amber"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/badge_bg"
+                        android:paddingStart="7dp"
+                        android:paddingTop="2dp"
+                        android:paddingEnd="7dp"
+                        android:paddingBottom="2dp"
+                        android:text="MASTER DSP"
+                        android:textColor="@color/ios_cyan"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_header_dac_badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="ESS Sabre ES9219 • 2.0V Active"
+                    android:textColor="@color/ios_text_secondary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/switch_master_dsp"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:checked="true"
+                android:contentDescription="Interruptor maestro del motor DSP" />
+        </LinearLayout>
+
+        <!-- ========================================================= -->
+        <!-- 2. HERO COCKPIT: D'ARSONVAL VU METER & SPECTRUM MONITOR   -->
+        <!-- ========================================================= -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/card_dark_glass"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <!-- Cockpit Eyebrow Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.06"
+                    android:text="ANALOG MONITORING COCKPIT"
+                    android:textColor="@color/philips_amber"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tv_philips_badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/badge_bg"
+                    android:paddingStart="8dp"
+                    android:paddingTop="3dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="3dp"
+                    android:text="D'Arsonval VU • Peak Hold"
+                    android:textColor="@color/philips_amber"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- D'ARSONVAL ANALOG VU METER (UNTOUCHED COMPONENT) -->
+            <com.v60.basslab.TachometerView
+                android:id="@+id/tachometer_view"
+                android:layout_width="match_parent"
+                android:layout_height="208dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="Vúmetro analógico estéreo D'Arsonval con retención de picos y ajuste táctil de sensibilidad" />
+
+            <TextView
+                android:id="@+id/tv_capture_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="Active D'Arsonval Ballistics • Tap glass to calibrate sensitivity (0 / +3 / +6 dB)"
+                android:textColor="@color/ios_text_secondary"
+                android:textSize="11sp" />
+
+            <!-- Capture & Demo Action Row (44dp Touch Targets) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_toggle_audio_capture"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_gradient_capture"
+                    android:contentDescription="Capturar audio directo de aplicaciones como Spotify o YouTube Music"
+                    android:text="Capture App Audio"
+                    android:textColor="@color/ios_text_primary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_toggle_demo_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/btn_glass_demo"
+                    android:contentDescription="Alternar modo de demostración rítmica del vúmetro"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:text="Demo Mode ON"
+                    android:textColor="@color/cyber_orange"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Recessed Real-Time Spectrum Analyzer Well -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/studio_inset_well"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:letterSpacing="0.05"
+                        android:text="REAL-TIME FFT SPECTRUM ANALYZER"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="● LIVE 60 FPS"
+                        android:textColor="@color/ios_green"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <com.v60.basslab.BassVisualizerView
+                    android:id="@+id/visualizer_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:contentDescription="Analizador de espectro de frecuencias en tiempo real" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="65Hz SUB"
+                        android:textColor="@color/cyber_red"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="200Hz PUNCH"
+                        android:textColor="@color/cyber_orange"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="600Hz BODY"
+                        android:textColor="@color/cyber_amber"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="4k–20k AIR"
+                        android:textColor="@color/ios_cyan"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ========================================================= -->
+        <!-- 3. MASTER BASS POWER & HARMONIC CONTOUR FADER             -->
+        <!-- ========================================================= -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/card_dark_glass"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.05"
+                        android:text="MASTER BASS FADER"
+                        android:textColor="@color/cyber_orange"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Subwoofer Harmonic Power &amp; Punch"
+                        android:textColor="@color/ios_text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Proportionally scales Sub (65Hz), Punch (200Hz) &amp; Bass ALC without vocal compression"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_master_percent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/studio_inset_well"
+                    android:paddingStart="12dp"
+                    android:paddingTop="6dp"
+                    android:paddingEnd="12dp"
+                    android:paddingBottom="6dp"
+                    android:text="100%"
+                    android:textColor="@color/philips_amber"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <SeekBar
+                android:id="@+id/seek_master_bass"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="Deslizador de potencia maestra de graves"
+                android:max="100"
+                android:progress="100"
+                android:progressDrawable="@drawable/seekbar_bass_progress"
+                android:splitTrack="false"
+                android:thumb="@drawable/seekbar_bass_thumb" />
+        </LinearLayout>
+
+        <!-- ========================================================= -->
+        <!-- 4. HARDWARE SIGNATURES: PHILIPS FW-M576 & SONY LBT-XB66   -->
+        <!-- ========================================================= -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/card_dark_glass"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.06"
+                    android:text="CLASSIC HI-FI HARDWARE SIGNATURES"
+                    android:textColor="@color/philips_amber"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/badge_bg"
+                    android:paddingStart="8dp"
+                    android:paddingTop="3dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="3dp"
+                    android:text="TDA7468D • M62427FP"
+                    android:textColor="@color/ios_cyan"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Faithful service-manual emulation with automatic level control (ALC / DBFB)"
+                android:textColor="@color/ios_text_secondary"
+                android:textSize="12sp" />
+
+            <!-- 4A. PHILIPS MAX SOUND (FW-M576) -->
+            <LinearLayout
+                android:id="@+id/btn_philips_max_sound"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/philips_max_sound_idle"
+                android:clickable="true"
+                android:contentDescription="Activar sistema Philips MAX Sound FW-M576"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:minHeight="68dp"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="12dp">
+
+                <TextView
+                    android:id="@+id/tv_max_sound_led"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:text="●"
+                    android:textColor="@color/philips_max_stroke"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_max_sound_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.02"
+                        android:text="PHILIPS MAX SOUND (FW-M576)"
+                        android:textColor="@color/ios_text_primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_max_sound_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="TDA7468D Chip: +12.5dB wOOx Sub, +9.5dB Punch, active ALC &amp; 2.0V DAC"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_max_sound_status_badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/badge_bg"
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="5dp"
+                    android:text="STANDBY"
+                    android:textColor="@color/ios_text_secondary"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- 4B. SONY LBT-XB66 (SAW SUPER WOOFER) -->
+            <LinearLayout
+                android:id="@+id/btn_sony_xb66_sound"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/sony_xb66_idle"
+                android:clickable="true"
+                android:contentDescription="Activar sistema Sony LBT-XB66 Super Woofer"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:minHeight="68dp"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="12dp">
+
+                <TextView
+                    android:id="@+id/tv_sony_xb66_led"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:text="●"
+                    android:textColor="@color/philips_amber"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_sony_xb66_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.02"
+                        android:text="SONY LBT-XB66 (SAW SUPER WOOFER)"
+                        android:textColor="@color/ios_text_primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_sony_xb66_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="M62427FP Chip: +13.5dB Subwoofer 63Hz, V-Groove, DBFB &amp; 2.0V DAC"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_sony_xb66_status_badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/badge_bg"
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="5dp"
+                    android:text="STANDBY"
+                    android:textColor="@color/ios_text_secondary"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- 4C. COMBINATORIAL 3-STAGE HARDWARE MATRIX WELL -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/studio_inset_well"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <!-- Stage 1: DBB -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.05"
+                    android:text="STAGE 1 • DYNAMIC BASS BOOST (DBB wOOx)"
+                    android:textColor="@color/ios_text_secondary"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_dbb_off"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/philips_segment_active"
+                        android:text="OFF"
+                        android:textColor="@color/philips_amber"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_dbb_1"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/philips_segment_idle"
+                        android:text="DBB 1"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_dbb_2"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/philips_segment_idle"
+                        android:text="DBB 2"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_dbb_3"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/philips_segment_idle"
+                        android:text="DBB 3"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_dbb_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="DBB Off: DSC curve active without wOOx boost"
+                    android:textColor="@color/ios_text_secondary"
+                    android:textSize="11sp" />
+
+                <!-- Stage 2: Gameport -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:letterSpacing="0.05"
+                    android:text="STAGE 2 • GAMEPORT MODES (GAMING &amp; CINEMA)"
+                    android:textColor="@color/ios_text_secondary"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_gameport_off"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/philips_segment_active"
+                        android:text="NORMAL"
+                        android:textColor="@color/philips_amber"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_gameport_speed"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/philips_segment_idle"
+                        android:text="SPEED"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_gameport_punch"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/philips_segment_idle"
+                        android:text="PUNCH"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_gameport_blast"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/philips_segment_idle"
+                        android:text="BLAST"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_gameport_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Gameport Normal: No console EQ applied"
+                    android:textColor="@color/ios_text_secondary"
+                    android:textSize="11sp" />
+
+                <!-- Stage 3: DSC (44dp height, 11sp text) -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:letterSpacing="0.05"
+                    android:text="STAGE 3 • DIGITAL SOUND CONTROL (DSC)"
+                    android:textColor="@color/ios_text_secondary"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_dsc_optimal"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/philips_segment_active"
+                        android:text="OPTIMAL"
+                        android:textColor="@color/philips_amber"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_dsc_techno"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/philips_segment_idle"
+                        android:text="TECHNO"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_dsc_rock"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/philips_segment_idle"
+                        android:text="ROCK"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_dsc_pop"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/philips_segment_idle"
+                        android:text="POP"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_dsc_jazz"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/philips_segment_idle"
+                        android:text="JAZZ"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ========================================================= -->
+        <!-- HIDDEN FOR LATER: SUB-HARMONIC SYNTHESIZER & HI-RES PLAYER -->
+        <!-- ========================================================= -->
+        <LinearLayout
+            android:id="@+id/card_subharmonic_synth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/card_dark_glass"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/btn_player_open_file"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:text="Load Track"
+                android:textColor="@color/philips_amber"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_player_track_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No track selected"
+                android:textColor="@color/ios_text_primary"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btn_player_play_pause"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:text="▶"
+                android:textColor="@color/ios_text_primary"
+                android:textSize="16sp" />
+
+            <SeekBar
+                android:id="@+id/seek_player_progress"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:max="1000"
+                android:progress="0" />
+
+            <TextView
+                android:id="@+id/tv_player_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0:00 / 0:00"
+                android:textColor="@color/ios_text_secondary"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tv_synth_sweep_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="75 Hz"
+                android:textColor="@color/ios_text_secondary"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tv_synth_sweep_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="75 Hz"
+                android:textColor="@color/ios_orange"
+                android:textSize="14sp" />
+
+            <SeekBar
+                android:id="@+id/seek_synth_sweep"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:max="75"
+                android:progress="30" />
+
+            <TextView
+                android:id="@+id/tv_synth_wide_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Balanced (Q=1.4)"
+                android:textColor="@color/ios_text_primary"
+                android:textSize="11sp" />
+
+            <Switch
+                android:id="@+id/switch_synth_auto"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:checked="false" />
+
+            <SeekBar
+                android:id="@+id/seek_synth_wide"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:max="25"
+                android:progress="9" />
+
+            <TextView
+                android:id="@+id/tv_synth_sub_level_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0%"
+                android:textColor="@color/ios_red"
+                android:textSize="14sp" />
+
+            <SeekBar
+                android:id="@+id/seek_synth_sub_level"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:max="100"
+                android:progress="0" />
+        </LinearLayout>
+
+        <!-- ========================================================= -->
+        <!-- 5. STUDIO ACOUSTIC PROFILES DECK (DISABLED BY DEFAULT)    -->
+        <!-- ========================================================= -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/card_dark_glass"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.06"
+                        android:text="STUDIO ACOUSTIC PROFILES"
+                        android:textColor="@color/ios_cyan"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_acoustic_profiles_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Disabled by default • Tap a profile or toggle switch"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/switch_acoustic_profiles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:checked="false"
+                    android:contentDescription="Activar o desactivar los perfiles acústicos de estudio" />
+            </LinearLayout>
+
+            <!-- Profile 1: Estéreo 90s (Sony MegaBass / Kenwood Loudness) -->
+            <LinearLayout
+                android:id="@+id/card_preset_retro_90s"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:alpha="0.72"
+                android:background="@drawable/studio_inset_well"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:minHeight="62dp"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/badge_bg"
+                    android:gravity="center"
+                    android:text="01"
+                    android:textColor="@color/ios_orange"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_title_retro_90s"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="90s Stereo (MegaBass / Kenwood)"
+                        android:textColor="@color/ios_text_primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Fletcher-Munson curve: +9.5dB (65Hz), +8dB (200Hz) &amp; +5dB Air 10kHz+"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/ios_pill_bg"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="4dp"
+                    android:text="Loudness 90s"
+                    android:textColor="@color/ios_orange"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Profile 2: 12'' Car Subwoofer (Rockford Fosgate Punch EQ + Cabin Gain) -->
+            <LinearLayout
+                android:id="@+id/card_preset_car_subwoofer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:alpha="0.72"
+                android:background="@drawable/studio_inset_well"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:minHeight="62dp"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/badge_bg"
+                    android:gravity="center"
+                    android:text="02"
+                    android:textColor="@color/ios_cyan"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_title_car_subwoofer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12'' Car Subwoofer (Ported Box)"
+                        android:textColor="@color/ios_text_primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Rockford 45Hz Punch EQ (+14dB Sub) + Cabin Gain + Tweeter 20kHz (+4.5dB)"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/ios_pill_bg"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="4dp"
+                    android:text="+14dB 45Hz"
+                    android:textColor="@color/ios_cyan"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Profile 3: Pegada Club (Funktion-One Dance Stack F218 + F215) -->
+            <LinearLayout
+                android:id="@+id/card_preset_club"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:alpha="0.72"
+                android:background="@drawable/studio_inset_well"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:minHeight="62dp"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/badge_bg"
+                    android:gravity="center"
+                    android:text="03"
+                    android:textColor="@color/ios_blue"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_title_club"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Club Punch (Funktion-One Impact)"
+                        android:textColor="@color/ios_text_primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Kick-Bin F215 (+11.5dB at 90-120Hz), Sub F218 (+7.5dB) &amp; horns (+3dB)"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/ios_pill_bg"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="4dp"
+                    android:text="F215 Kick"
+                    android:textColor="@color/ios_blue"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Profile 4: Vinilo & Calidez Valvular 70s (McIntosh / Marantz Tube + RIAA) -->
+            <LinearLayout
+                android:id="@+id/card_preset_vinyl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:alpha="0.72"
+                android:background="@drawable/studio_inset_well"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:minHeight="62dp"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/badge_bg"
+                    android:gravity="center"
+                    android:text="04"
+                    android:textColor="@color/ios_yellow"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_title_vinyl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="70s Vinyl &amp; Tube Warmth"
+                        android:textColor="@color/ios_text_primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="McIntosh Transformer: Body 250-600Hz (+2.5dB) &amp; Treble Roll-Off (-1.5dB)"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/ios_pill_bg"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="4dp"
+                    android:text="Tube Warmth"
+                    android:textColor="@color/ios_yellow"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Profile 5: Audiófilo Directo (Bit-Perfect 0.0 dB Linear Phase) -->
+            <LinearLayout
+                android:id="@+id/card_preset_flat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alpha="0.72"
+                android:background="@drawable/studio_inset_well"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:minHeight="62dp"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/badge_bg"
+                    android:gravity="center"
+                    android:text="05"
+                    android:textColor="@color/ios_green"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_title_flat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Audiophile Direct (Bit-Perfect)"
+                        android:textColor="@color/ios_text_primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Flat 0.0 dB reference (5 bands + 0% Exciter) with Linear Phase filter"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/ios_pill_bg"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="4dp"
+                    android:text="0.0 dB Flat"
+                    android:textColor="@color/ios_green"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ========================================================= -->
+        <!-- 6. AI NEURAL AUDIO DIRECTOR (SMART DJ & LIVE DYNAMIC EQ)  -->
+        <!-- ========================================================= -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/card_dark_glass"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.06"
+                        android:text="SMART DJ (PER-TRACK AUTO-TUNING)"
+                        android:textColor="@color/ios_purple"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Analyzes spectral fingerprint and calibrates 8 parameters per track"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/switch_smart_dj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:contentDescription="Activar Smart DJ por pista" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/studio_inset_well"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:id="@+id/tv_smart_dj_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Manual Mode Active"
+                    android:textColor="@color/ios_cyan"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_smart_dj_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Turn switch ON for AI to auto-calibrate each track."
+                    android:textColor="@color/ios_text_secondary"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:background="@color/studio_divider" />
+
+            <!-- LIVE DYNAMIC EQ (STEM-TRACKER) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.06"
+                        android:text="LIVE DYNAMIC EQ 3D (STEM-TRACKER)"
+                        android:textColor="@color/philips_amber"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Continuous psychoacoustic 8-channel modulation (160ms) in background"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/switch_live_dynamic_eq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:contentDescription="Activar ecualización dinámica en vivo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_dynamic_stem_badge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/studio_inset_well"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_dynamic_stem_moment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Active Moment: 🎵 Balanced Dynamics"
+                        android:textColor="@color/philips_amber"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_dynamic_intensity_val"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Modulación: 0%"
+                        android:textColor="@color/ios_cyan"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_dynamic_stem_action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="Balanced curve. Turn switch ON for live 3D psychoacoustic modulation."
+                    android:textColor="@color/ios_text_secondary"
+                    android:textSize="11sp" />
+
+                <ProgressBar
+                    android:id="@+id/progress_live_dynamic_intensity"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:layout_marginTop="8dp"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressBackgroundTint="@color/studio_divider"
+                    android:progressTint="@color/philips_amber" />
+
+                <TextView
+                    android:id="@+id/tv_dynamic_stem_telemetry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="monospace"
+                    android:text="SUB +8.0dB • KICK +6.5dB • BODY -0.5dB • VOCALS +2.0dB • AIR +3.0dB • ALC +1.5dB"
+                    android:textColor="@color/studio_terminal_green"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <!-- AI Action Row (44dp+ Touch Targets) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_ask_ai_dialog"
+                    android:layout_width="0dp"
+                    android:layout_height="46dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_gradient_capture"
+                    android:text="Design EQ with AI"
+                    android:textColor="@color/ios_text_primary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_reanalyze_track"
+                    android:layout_width="0dp"
+                    android:layout_height="46dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_glass_demo"
+                    android:text="Re-analyze Track"
+                    android:textColor="@color/philips_amber"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ========================================================= -->
+        <!-- 7. COLLAPSIBLE ENGINEERING & HARDWARE TELEMETRY DRAWER    -->
+        <!-- ========================================================= -->
+        <Button
+            android:id="@+id/btn_toggle_advanced"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/ios_pill_bg"
+            android:text="Advanced Settings, 8-Ch Parametric EQ &amp; Quad DAC ▼"
+            android:textColor="@color/ios_text_secondary"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/layout_advanced_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- FULL 8-PARAMETER STUDIO PARAMETRIC EQ & DYNAMICS RACK -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/card_dark_glass"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:letterSpacing="0.06"
+                            android:text="MANUAL PARAMETRIC CALIBRATION (8 CHANNELS)"
+                            android:textColor="@color/ios_cyan"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Full 5-Band EQ + Exciter + ALC + Pre-Amp (Accessible by AI)"
+                            android:textColor="@color/ios_text_secondary"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btn_reset_parametric_eq"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/ios_pill_bg"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:text="Flat (0 dB)"
+                        android:textColor="@color/ios_green"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- 1. Sub-Bass 32-65Hz (-6.0 dB to +16.0 dB, step 0.5 dB, max=44, 0dB=12) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Band 1 • Infrasonic Sub-Bass (32–65 Hz)"
+                        android:textColor="@color/ios_text_primary"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_adv_sub_db"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+8.5 dB"
+                        android:textColor="@color/ios_cyan"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/seek_adv_sub"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="2dp"
+                    android:max="44"
+                    android:progress="29" />
+
+                <!-- 2. Punch 90-200Hz (-6.0 dB to +16.0 dB, step 0.5 dB, max=44, 0dB=12) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Band 2 • Kick / Woofer Punch (90–200 Hz)"
+                        android:textColor="@color/ios_text_primary"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_adv_punch_db"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+6.5 dB"
+                        android:textColor="@color/ios_orange"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/seek_adv_punch"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="2dp"
+                    android:max="44"
+                    android:progress="25" />
+
+                <!-- 3. Warmth / Anti-Mud 250-600Hz (-6.0 dB to +6.0 dB, step 0.5 dB, max=24, 0dB=12) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Band 3 • Tube Body / Mud Cut (250–600 Hz)"
+                        android:textColor="@color/ios_text_primary"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_adv_clarity_db"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.0 dB"
+                        android:textColor="@color/ios_green"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/seek_adv_clarity"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="2dp"
+                    android:max="24"
+                    android:progress="12" />
+
+                <!-- 4. Vocal & Instrument Presence 1-4kHz (-6.0 dB to +10.0 dB, step 0.5 dB, max=32, 0dB=12) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Band 4 • Vocal Presence &amp; Clarity (1–4 kHz)"
+                        android:textColor="@color/ios_text_primary"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_adv_presence_db"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+1.5 dB"
+                        android:textColor="@color/ios_yellow"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/seek_adv_presence"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="2dp"
+                    android:max="32"
+                    android:progress="15" />
+
+                <!-- 5. Super-Tweeter Air & Brilliance 8-20kHz (-6.0 dB to +12.0 dB, step 0.5 dB, max=36, 0dB=12) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Band 5 • Super-Tweeter Sparkle &amp; Air (8–20 kHz)"
+                        android:textColor="@color/ios_text_primary"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_adv_air_db"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+2.5 dB"
+                        android:textColor="@color/ios_cyan"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/seek_adv_air"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="2dp"
+                    android:max="36"
+                    android:progress="17" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/studio_divider" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.06"
+                    android:text="BASS DYNAMICS, EXCITER &amp; PRE-AMPLIFIER"
+                    android:textColor="@color/philips_amber"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <!-- 6. Hardware Harmonic Exciter (0% to 100%, mapped to 0..1000) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Hardware Harmonic Exciter (wOOx / BassBoost)"
+                        android:textColor="@color/ios_text_primary"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_adv_exciter_val"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="45%"
+                        android:textColor="@color/philips_amber"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/seek_adv_exciter"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="2dp"
+                    android:max="100"
+                    android:progress="45" />
+
+                <!-- 7. MBC Bass ALC / DBFB Dynamic Sustain (0.0 dB to +4.0 dB, step 0.1 dB, max=40) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Dynamic Bass Compressor (ALC / DBFB Sustain)"
+                        android:textColor="@color/ios_text_primary"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_adv_alc_db"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+1.5 dB"
+                        android:textColor="@color/ios_purple"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/seek_adv_alc"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="2dp"
+                    android:max="40"
+                    android:progress="15" />
+
+                <!-- 8. Pre-Amplifier / Headroom Input Gain (-6.0 dB to +3.0 dB, step 0.5 dB, max=18, 0dB=12) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Pre-Amplifier Gain (Headroom / Input)"
+                        android:textColor="@color/ios_text_primary"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_adv_preamp_db"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.0 dB"
+                        android:textColor="@color/ios_green"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/seek_adv_preamp"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="2dp"
+                    android:max="18"
+                    android:progress="12" />
+            </LinearLayout>
+
+            <!-- QUAD DAC HARDWARE CARD -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/card_dark_glass"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:letterSpacing="0.06"
+                        android:text="HARDWARE QUAD DAC (ESS SABRE ES9219)"
+                        android:textColor="@color/philips_amber"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_refresh_dac"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:background="@drawable/ios_pill_bg"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:text="Refresh"
+                        android:textColor="@color/ios_cyan"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_adv_impedance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Impedance: 83 Ω / 82 Ω • High-Imp (2.0 Vrms)"
+                    android:textColor="@color/ios_text_primary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Force 2.0 Vrms Output Stage (High Gain)"
+                        android:textColor="@color/ios_text_primary"
+                        android:textSize="12sp" />
+
+                    <Switch
+                        android:id="@+id/switch_force_high_imp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:checked="true" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="ESS Sabre Digital Reconstruction Filter:"
+                    android:textColor="@color/ios_text_secondary"
+                    android:textSize="11sp" />
+
+                <Spinner
+                    android:id="@+id/spinner_ess_filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/ios_input_bg" />
+            </LinearLayout>
+
+            <!-- LOGS & DIAGNOSTICS CARD -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/card_dark_glass"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:letterSpacing="0.06"
+                        android:text="DSP &amp; ALSA DIAGNOSTIC CONSOLE"
+                        android:textColor="@color/ios_cyan"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_clear_logs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:background="@drawable/ios_pill_bg"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:text="Clear"
+                        android:textColor="@color/ios_text_secondary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <ScrollView
+                    android:id="@+id/scroll_logs"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/studio_inset_well"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/tv_console_logs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="monospace"
+                        android:text="[Starting diagnostic system...]"
+                        android:textColor="@color/studio_terminal_green"
+                        android:textSize="11sp" />
+                </ScrollView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_copy_logs"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/ios_pill_bg"
+                        android:text="Copy Logs"
+                        android:textColor="@color/ios_text_primary"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_export_logs"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/ios_pill_bg"
+                        android:text="Export"
+                        android:textColor="@color/ios_cyan"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
